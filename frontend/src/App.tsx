@@ -74,6 +74,7 @@ const App = () => {
   const openModal = (modal: typeof activeModal) => setActiveModal(modal);
   const closeModal = () => setActiveModal(null);
   const currentAudioRef = useRef<HTMLAudioElement | null>(null);
+  const isSendingChatRef = useRef(false);
 
   // --- Persistence ---
   useEffect(() => {
@@ -330,10 +331,26 @@ const App = () => {
   };
 
   const handleChat = async () => {
-    if (!chatMessage.trim()) return;
-    const userMsg = { role: 'user', content: chatMessage };
+    const msg = chatMessage.trim();
+    if (!msg) return;
+
+    // Stop recording if active
+    if (recordingField === 'chat') {
+      recognitionRef.current?.abort();
+      setRecordingField(null);
+    }
+
+    // Set flag to prevent STT onend from re-populating the field
+    isSendingChatRef.current = true;
+    
+    const userMsg = { role: 'user', content: msg };
     setChatHistory(prev => [...prev, userMsg]);
     setChatMessage('');
+    
+    // Reset textarea height
+    const textarea = document.querySelector('textarea');
+    if (textarea) textarea.style.height = '68px';
+
     setIsLoading(true);
     try {
       const res = await api.post('/chat', { message: userMsg.content, language: appLang });
@@ -344,6 +361,8 @@ const App = () => {
       console.error(e);
     } finally {
       setIsLoading(false);
+      // Small delay to ensure STT onend has passed
+      setTimeout(() => { isSendingChatRef.current = false; }, 500);
     }
   };
 
@@ -445,6 +464,10 @@ const App = () => {
       setRecordingField(null);
       setInterimText('');
       recognitionRef.current = null;
+      
+      // If we just sent a message, don't put the text back in
+      if (isSendingChatRef.current) return;
+
       const text = finalTranscript.trim();
       if (!text) return;
 
