@@ -11,13 +11,15 @@
 [![Groq](https://img.shields.io/badge/Groq-LLaMA_3.3_70B-F55036?style=flat-square)](https://groq.com)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS_v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 
-**[🌐 Live Demo](#)** · **[📡 API Docs](#)**
+**[🌐 Live Demo](https://rescue-ai-two.vercel.app)** · **[📡 API Docs](#)**
 
 </div>
 
 ## What Is RescueAI?
 
-RescueAI is a bilingual emergency response platform that lets anyone in Pakistan trigger an SOS alert, report an incident, track live responder dispatch, and get real-time AI guidance: all in English or Urdu.
+**Live Application:** [https://rescue-ai-two.vercel.app](https://rescue-ai-two.vercel.app)
+
+RescueAI is a bilingual emergency response platform that lets anyone in Pakistan trigger an SOS alert, report an incident, track live responder dispatch, and get real-time AI guidance — all in English or Urdu.
 
 The core idea: in a real emergency, you don't have time to navigate a government portal or wait on hold. One tap sends your GPS location, assigns a responder unit, and puts an AI assistant in your hands that can walk you through CPR, bleeding control, or any crisis: by voice if needed.
 
