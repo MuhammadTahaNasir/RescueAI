@@ -1521,7 +1521,7 @@ const App = () => {
                       </div>
                     </div>
                     <textarea 
-                      className="w-full bg-transparent border-none px-6 py-5 text-lg focus:ring-0 resize-none h-[68px] max-h-[200px] text-white leading-relaxed placeholder:text-slate-600 font-medium"
+                      className="w-full bg-transparent border-none px-3 md:px-6 py-5 text-lg focus:ring-0 resize-none h-[68px] max-h-[200px] text-white leading-relaxed placeholder:text-slate-600 font-medium placeholder:truncate placeholder:whitespace-nowrap"
                       placeholder={recordingField === 'chat' ? T.intercepting : T.message_aria}
                       value={chatMessage}
                       onChange={e => {
