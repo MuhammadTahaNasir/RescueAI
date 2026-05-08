@@ -17,8 +17,6 @@
 
 ## What Is RescueAI?
 
-**Live Application:** [https://rescue-ai-two.vercel.app](https://rescue-ai-two.vercel.app)
-
 RescueAI is a bilingual emergency response platform that lets anyone in Pakistan trigger an SOS alert, report an incident, track live responder dispatch, and get real-time AI guidance all in English or Urdu.
 
 The core idea: in a real emergency, you don't have time to navigate a government portal or wait on hold. One tap sends your GPS location, assigns a responder unit, and puts an AI assistant in your hands that can walk you through CPR, bleeding control, or any crisis: by voice if needed.
