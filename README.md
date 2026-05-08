@@ -11,7 +11,7 @@
 [![Groq](https://img.shields.io/badge/Groq-LLaMA_3.3_70B-F55036?style=flat-square)](https://groq.com)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS_v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 
-**[🌐 Live Demo](https://rescue-ai-two.vercel.app)** · **[📡 API Docs](#)**
+**[🌐 Live Demo](https://rescueai-pakistan.vercel.app)** · **[📡 API Docs](#)**
 
 </div>
 
@@ -19,7 +19,7 @@
 
 **Live Application:** [https://rescue-ai-two.vercel.app](https://rescue-ai-two.vercel.app)
 
-RescueAI is a bilingual emergency response platform that lets anyone in Pakistan trigger an SOS alert, report an incident, track live responder dispatch, and get real-time AI guidance — all in English or Urdu.
+RescueAI is a bilingual emergency response platform that lets anyone in Pakistan trigger an SOS alert, report an incident, track live responder dispatch, and get real-time AI guidance all in English or Urdu.
 
 The core idea: in a real emergency, you don't have time to navigate a government portal or wait on hold. One tap sends your GPS location, assigns a responder unit, and puts an AI assistant in your hands that can walk you through CPR, bleeding control, or any crisis: by voice if needed.
 
@@ -29,13 +29,13 @@ Built for Pakistan. Works in Urdu. Speaks back to you.
 
 ## Features
 
-*   **Emergency SOS**: one-tap alert with GPS coordinates, auto-assigned responder unit, and live ETA
-*   **Incident Reporting**: structured report submission with AI-generated response protocol per incident type
-*   **Live Tracking**: real-time dispatch monitoring by Alert ID or Report ID
-*   **ARIA Assistant**: conversational AI emergency guide for CPR, choking, bleeding, burns, and more
-*   **Voice Input**: browser speech recognition for hands-free operation in English and Urdu
-*   **Text-to-Speech**: ARIA responses read aloud (English via Web Speech API, Urdu via gTTS)
-*   **Bilingual UI**: full English and Urdu support with RTL layout switching
+- **Emergency SOS**: one-tap alert with GPS coordinates, auto-assigned responder unit, and live ETA
+- **Incident Reporting**: structured report submission with AI-generated response protocol per incident type
+- **Live Tracking**: real-time dispatch monitoring by Alert ID or Report ID
+- **ARIA Assistant**: conversational AI emergency guide for CPR, choking, bleeding, burns, and more
+- **Voice Input**: browser speech recognition for hands-free operation in English and Urdu
+- **Text-to-Speech**: ARIA responses read aloud (English via Web Speech API, Urdu via gTTS)
+- **Bilingual UI**: full English and Urdu support with RTL layout switching
 
 ![RescueAI AI Chat Interface](screenshots/ai-chat.png)
 
@@ -47,13 +47,13 @@ RescueAI uses a modern, decoupled architecture to ensure 100% uptime and zero-la
 graph TD
     User((User)) -->|Interacts| Frontend[React 19 Frontend]
     Frontend -->|API Calls| Backend[FastAPI Backend]
-    
+
     subgraph "AI & Speech Engine"
         Backend -->|Logic| Groq[Groq LLaMA 3.3 70B]
         Backend -->|Voice STT| Whisper[Groq Whisper v3]
         Backend -->|Urdu TTS| gTTS[Google gTTS]
     end
-    
+
     subgraph "Maps & Data"
         Frontend -->|Maps| Leaflet[Leaflet.js]
         Frontend -->|Location| Nominatim[OpenStreetMap]
@@ -70,7 +70,7 @@ sequenceDiagram
     participant F as Frontend
     participant B as Backend
     participant A as Groq AI
-    
+
     U->>F: Submit Report
     F->>B: POST /report (Incident Details)
     B->>A: Process with Emergency Context
@@ -81,14 +81,14 @@ sequenceDiagram
 
 ## Tech Stack
 
-| Layer | Technology | Why |
-|---|---|---|
-| **Intelligence** | Groq LLaMA 3.3 70B | Fast inference, strong multilingual support |
-| **Voice Control** | Groq Whisper v3 | Best Urdu transcription accuracy |
-| **Speech (Urdu)** | Google gTTS | Correct Urdu script rendering |
-| **Backend** | FastAPI | High-performance, async Python server |
-| **Frontend** | React 19 + Vite | Modern, snappy user interface |
-| **Design** | Tailwind CSS v4 | Clean UI with RTL (Urdu) support |
+| Layer             | Technology         | Why                                         |
+| ----------------- | ------------------ | ------------------------------------------- |
+| **Intelligence**  | Groq LLaMA 3.3 70B | Fast inference, strong multilingual support |
+| **Voice Control** | Groq Whisper v3    | Best Urdu transcription accuracy            |
+| **Speech (Urdu)** | Google gTTS        | Correct Urdu script rendering               |
+| **Backend**       | FastAPI            | High-performance, async Python server       |
+| **Frontend**      | React 19 + Vite    | Modern, snappy user interface               |
+| **Design**        | Tailwind CSS v4    | Clean UI with RTL (Urdu) support            |
 
 ## Project Structure
 
@@ -104,19 +104,27 @@ RescueAI/
 ## Local Setup
 
 ### Backend
+
 1. Go to `backend/`
 2. `pip install -r requirements.txt`
 3. Add your `GROQ_API_KEY` to `.env`
 4. Run: `python main.py`
 
 ### Frontend
+
 1. Go to `frontend/`
 2. `npm install`
 3. Run: `npm run dev`
 
 ## License
 
-MIT — see [LICENSE](LICENSE) for details.
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+
+## Contact
+
+**Muhammad Taha Nasir** - [m.tahanasir.cs@gmail.com](mailto:m.tahanasir.cs@gmail.com)
+
+**Project Link:** [https://github.com/MuhammadTahaNasir/RescueAI](https://github.com/MuhammadTahaNasir/RescueAI)
 
 <div align="center">
 <sub>Built for Pakistan · AI Emergency Response · Bilingual · Voice-first</sub>
